@@ -1,0 +1,27 @@
+<% if (success_msg && success_msg.trim() !== '') { %>
+  <div class="alert alert-success alert-dismissible fade show py-1 px-2 mb-1 small text-dark border-0" role="alert" style="background-color:#d1e7dd;">
+    <%= success_msg %>
+    <button type="button" class="btn-close btn-sm p-2" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+<% if (error_msg && error_msg.trim() !== '') { %>
+  <div class="alert alert-warning alert-dismissible fade show py-1 px-2 mb-1 small text-dark border-0" role="alert" style="background-color:#fff3cd;">
+    <%= error_msg %>
+    <button type="button" class="btn-close btn-sm p-2" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% } %>
+
+<% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+  <% errors.forEach(function(error) { 
+       if(error.msg && error.msg.trim() !== '') { %>
+        <div class="alert alert-danger alert-dismissible fade show py-1 px-2 mb-1 small text-dark border-0" role="alert" style="background-color:#f8d7da;">
+          <%= error.msg %>
+          <button type="button" class="btn-close btn-sm p-2" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+  <% } }); %>
+<% } %>
+
+
+
+
